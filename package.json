@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "clean": "rimraf gas/dist",
+    "build:frontend": "vite build --config vite.config.frontend.ts",
+    "build:backend": "vite build --config vite.config.backend.ts",
+    "build": "yarn clean && yarn build:frontend && yarn build:backend",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
