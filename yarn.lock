@@ -355,6 +355,11 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.5.tgz#a6ce3e556e00fd9895dd872dd172ad0d4bd687f4"
   integrity sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==
 
+"@types/google-apps-script@^1.0.83":
+  version "1.0.83"
+  resolved "https://registry.yarnpkg.com/@types/google-apps-script/-/google-apps-script-1.0.83.tgz#1b92cdfd87feb146d2876eaf343a99bf2770790c"
+  integrity sha512-o+QNeNZxPAfYHzRiLHjub9qF0IILg21r9MzYlnrIHUT+/wcC70aqDfedmzKTgtzsj79zvoTZD0cjGgy46+1Ynw==
+
 "@types/prop-types@*":
   version "15.7.12"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.12.tgz#12bb1e2be27293c1406acb6af1c3f3a1481d98c6"
@@ -641,6 +646,17 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
+escodegen@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/escodegen/-/escodegen-2.1.0.tgz#ba93bbb7a43986d29d6041f99f5262da773e2e17"
+  integrity sha512-2NlIDTwUWJN0mRPQOdtQBzbUHvdGY2P1VXSyU83Q3xKxM7WHX2Ql8dKq782Q9TgQUNOLEzEYu9bzLNj1q88I5w==
+  dependencies:
+    esprima "^4.0.1"
+    estraverse "^5.2.0"
+    esutils "^2.0.2"
+  optionalDependencies:
+    source-map "~0.6.1"
+
 eslint-plugin-react-hooks@^4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.6.2.tgz#c829eb06c0e6f484b3fbb85a97e57784f328c596"
@@ -717,6 +733,16 @@ espree@^9.6.0, espree@^9.6.1:
     acorn-jsx "^5.3.2"
     eslint-visitor-keys "^3.4.1"
 
+esprima-next@^6.0.2:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/esprima-next/-/esprima-next-6.0.3.tgz#b20e74d019329ab21387d1ae0692ebbda9996d30"
+  integrity sha512-fVfE+9qIOJSbS3AR7roIuL0gCeS+tC86bJV9GlJtwXCRoo67q6tsGGUjThW+JtR5IQSShnHqaDqX8D0IYDfRGA==
+
+esprima@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
+  integrity sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
+
 esquery@^1.4.2:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/esquery/-/esquery-1.5.0.tgz#6ce17738de8577694edd7361c57182ac8cb0db0b"
@@ -731,10 +757,15 @@ esrecurse@^4.3.0:
   dependencies:
     estraverse "^5.2.0"
 
-estraverse@^5.1.0, estraverse@^5.2.0:
+estraverse@5.3.0, estraverse@^5.1.0, estraverse@^5.2.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-5.3.0.tgz#2eea5290702f26ab8fe5370370ff86c965d21123"
   integrity sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==
+
+estree-walker@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.6.1.tgz#53049143f40c6eb918b23671d1fe3219f3a1b362"
+  integrity sha512-SqmZANLWS0mnatqbSfRP5g8OXZC12Fgg1IwNtLsyHDzJizORW4khDfjPqJZsemPWBB2uqykUah5YpQ6epsqC/w==
 
 esutils@^2.0.2:
   version "2.0.3"
@@ -819,6 +850,22 @@ fsevents@~2.3.2, fsevents@~2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
   integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
+
+gas-client@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/gas-client/-/gas-client-1.1.1.tgz#0cde9de6fb285a5a84ba5553998202eb149787bc"
+  integrity sha512-2ALu3Go94uGI/KZy06sJmpXYVPOYLTR3Jd6s8+KAU9OlqxGfJ/1OiEXEeo8SU9dHEcnPEQjgmQQ2lUU9nu35hw==
+  dependencies:
+    uuid "^9.0.0"
+
+gas-entry-generator@^2.5.1:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/gas-entry-generator/-/gas-entry-generator-2.6.0.tgz#85e2a0709bf54c5610386fda5734b256aece6935"
+  integrity sha512-iO1AM+6+H5TySmbRVadyDegVObchFkB+DqrUwVryKc28HxTZd4HpaRxTe3cKT2pzyMMP0UIMt0j7NsLV26OSkA==
+  dependencies:
+    escodegen "2.1.0"
+    esprima-next "^6.0.2"
+    estraverse "5.3.0"
 
 glob-parent@^5.1.2:
   version "5.1.2"
@@ -999,7 +1046,7 @@ merge2@^1.3.0, merge2@^1.4.1:
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
-micromatch@^4.0.4:
+micromatch@^4.0.4, micromatch@^4.0.7:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.7.tgz#33e8190d9fe474a9895525f5618eee136d46c2e5"
   integrity sha512-LPP/3KorzCwBxfeUuZmaR6bG2kdeHSbe0P2tY3FLRU4vYrjYz5hI4QZwV0njUx3jeuKe67YukQ1LSPZBKDqO/Q==
@@ -1162,6 +1209,22 @@ rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
+rollup-plugin-google-apps-script@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-google-apps-script/-/rollup-plugin-google-apps-script-1.1.13.tgz#8ffcd552b61f0dfc317d02e0790ef5d1d2f54ece"
+  integrity sha512-cp3y2eTMSKzaDO0IaMemuaN2lqBAe73DFohHKMARSFvRLKatEd3P3/JFeaA7IFPIdp23+0q1sxsCFa/Mgphk8A==
+  dependencies:
+    gas-entry-generator "^2.5.1"
+    picocolors "^1.0.0"
+    rollup-pluginutils "^2.8.2"
+
+rollup-pluginutils@^2.8.2:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.8.2.tgz#72f2af0748b592364dbd3389e600e5a9444a351e"
+  integrity sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==
+  dependencies:
+    estree-walker "^0.6.1"
+
 rollup@^4.13.0:
   version "4.18.0"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-4.18.0.tgz#497f60f0c5308e4602cf41136339fbf87d5f5dda"
@@ -1228,6 +1291,11 @@ source-map-js@^1.2.0:
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.0.tgz#16b809c162517b5b8c3e7dcd315a2a5c2612b2af"
   integrity sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==
 
+source-map@~0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
+  integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
+
 strip-ansi@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
@@ -1287,6 +1355,18 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+uuid@^9.0.0:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.1.tgz#e188d4c8853cc722220392c424cd637f32293f30"
+  integrity sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==
+
+vite-plugin-singlefile@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/vite-plugin-singlefile/-/vite-plugin-singlefile-2.0.2.tgz#af2c95e0182bd363dbe29b80bea5c5a78209f649"
+  integrity sha512-Z2ou6HcvED5CF0hM+vcFSaFa+klyS8RyyLxW0PbMRLnMbvzTI6ueWyxdYNFhpuXZgz/aj6+E/dHFTdEcw6gb9w==
+  dependencies:
+    micromatch "^4.0.7"
 
 vite@^5.3.1:
   version "5.3.1"

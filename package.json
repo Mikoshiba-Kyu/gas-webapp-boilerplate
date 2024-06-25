@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "gas-client": "^1.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@types/google-apps-script": "^1.0.83",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
@@ -22,7 +24,9 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "rollup-plugin-google-apps-script": "^1.1.13",
     "typescript": "^5.2.2",
-    "vite": "^5.3.1"
+    "vite": "^5.3.1",
+    "vite-plugin-singlefile": "^2.0.2"
   }
 }
