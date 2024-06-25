@@ -1,0 +1,10 @@
+{
+  "name": "gas-webapp-boilerplate",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "customizations": {
+    "vscode": {
+      "extensions": ["esbenp.prettier-vscode"]
+    }
+  },
+  "postCreateCommand": "yarn && yarn global add @google/clasp"
+}
