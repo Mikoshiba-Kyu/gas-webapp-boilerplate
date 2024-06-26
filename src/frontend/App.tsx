@@ -9,11 +9,15 @@ function App() {
   const [count, setCount] = useState(0);
 
   const handleButton = async () => {
-    try {
-      const response: number = await serverFunctions.testFunction(count);
-      setCount(response);
-    } catch (err) {
-      console.log(err);
+    if (import.meta.env.PROD) {
+      try {
+        const response: number = await serverFunctions.testFunction(count);
+        setCount(response);
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      setCount(count + 1);
     }
   };
 
@@ -27,7 +31,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Vite + React + clasp</h1>
       <div className="card">
         <button onClick={handleButton}>count is {count}</button>
         <p>
@@ -37,6 +41,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <p className="read-the-docs">and see the official clasp repository</p>
+      <a href="https://github.com/google/clasp" target="_blank">
+        <p>https://github.com/google/clasp</p>
+      </a>
     </>
   );
 }
