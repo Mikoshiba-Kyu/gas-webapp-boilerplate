@@ -2,9 +2,20 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import "./App.css";
+import { GASClient } from "gas-client";
+const { serverFunctions } = new GASClient();
 
 function App() {
   const [count, setCount] = useState(0);
+
+  const handleButton = async () => {
+    try {
+      const response: number = await serverFunctions.testFunction(count);
+      setCount(response);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <>
@@ -18,9 +29,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <button onClick={handleButton}>count is {count}</button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
