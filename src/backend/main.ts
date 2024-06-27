@@ -1,4 +1,4 @@
-import { testFunction } from "./serverFunctions";
+import { sampleFunction } from "./serverFunctions";
 
 declare const global: {
   [x: string]: unknown;
@@ -10,4 +10,4 @@ global.doGet = (): GoogleAppsScript.HTML.HtmlOutput => {
 };
 
 // Create the necessary functions below.
-global.testFunction = testFunction;
+global.sampleFunction = sampleFunction;

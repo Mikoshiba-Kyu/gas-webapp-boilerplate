@@ -11,7 +11,7 @@ function App() {
   const handleButton = async () => {
     if (import.meta.env.PROD) {
       try {
-        const response: number = await serverFunctions.testFunction(count);
+        const response: number = await serverFunctions.sampleFunction(count);
         setCount(response);
       } catch (err) {
         console.log(err);
