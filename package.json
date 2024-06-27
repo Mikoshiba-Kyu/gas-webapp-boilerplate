@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "test:unittest": "vitest",
     "clean": "rimraf gas/dist",
     "build:frontend": "vite build --config vite.config.frontend.ts",
     "build:backend": "vite build --config vite.config.backend.ts",
@@ -30,6 +31,7 @@
     "rollup-plugin-google-apps-script": "^1.1.13",
     "typescript": "^5.2.2",
     "vite": "^5.3.1",
-    "vite-plugin-singlefile": "^2.0.2"
+    "vite-plugin-singlefile": "^2.0.2",
+    "vitest": "^1.6.0"
   }
 }
