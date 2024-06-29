@@ -6,5 +6,5 @@
       "extensions": ["esbenp.prettier-vscode"]
     }
   },
-  "postCreateCommand": "yarn && yarn global add @google/clasp"
+  "postCreateCommand": "yarn && yarn global add @google/clasp && yarn husky install"
 }

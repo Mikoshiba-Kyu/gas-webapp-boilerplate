@@ -5,24 +5,44 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "test:unittest": "vitest",
+    "test:e2e": "playwright test",
+    "clean": "rimraf gas/dist",
+    "build:frontend": "vite build --config vite.config.frontend.ts",
+    "build:backend": "vite build --config vite.config.backend.ts",
+    "build": "yarn clean && yarn build:frontend && yarn build:backend",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "gas-client": "^1.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "@types/google-apps-script": "^1.0.83",
+    "@types/node": "^20.14.9",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "prettier": "3.3.2",
+    "rollup-plugin-google-apps-script": "^1.1.13",
     "typescript": "^5.2.2",
-    "vite": "^5.3.1"
+    "vite": "^5.3.1",
+    "vite-plugin-singlefile": "^2.0.2",
+    "vitest": "^1.6.0"
+  },
+  "lint-staged": {
+    "*.{ts, tsx}": "eslint --fix",
+    "*": "prettier . --write"
   }
 }
