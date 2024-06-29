@@ -1,1 +1,1 @@
-export const sampleFunction = (num: number): number => num + 1;
+export const sampleFunction = (num: number): number => num + 1

@@ -1,25 +1,25 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import "./App.css";
-import { GASClient } from "gas-client";
-const { serverFunctions } = new GASClient();
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
+import './App.css'
+import { GASClient } from 'gas-client'
+const { serverFunctions } = new GASClient()
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   const handleButton = async () => {
     if (import.meta.env.PROD) {
       try {
-        const response: number = await serverFunctions.sampleFunction(count);
-        setCount(response);
+        const response: number = await serverFunctions.sampleFunction(count)
+        setCount(response)
       } catch (err) {
-        console.log(err);
+        console.log(err)
       }
     } else {
-      setCount(count + 1);
+      setCount(count + 1)
     }
-  };
+  }
 
   return (
     <>
@@ -46,7 +46,7 @@ function App() {
         <p>https://github.com/google/clasp</p>
       </a>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
