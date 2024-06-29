@@ -1,9 +1,10 @@
 name: Playwright Tests
 on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
+  workflow_dispatch:
+    inputs:
+      baseURL:
+        description: 'Base URL for the tests'
+        required: true
 jobs:
   test:
     timeout-minutes: 60
@@ -19,6 +20,8 @@ jobs:
         run: yarn playwright install --with-deps
       - name: Run Playwright tests
         run: yarn playwright test
+        env:
+          PLAYWRIGHT_BASE_URL: ${{ github.event.inputs.baseURL }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
