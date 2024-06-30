@@ -1,20 +1,23 @@
-import { test, expect } from '@playwright/test'
+import { test, expect, Locator, FrameLocator } from '@playwright/test'
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/')
+test('Clicking on it makes the count go to 1.', async ({ page }) => {
+  await page.goto('')
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/)
-})
+  /**
+   * Web apps running in Google Apps Script are actually content displayed in an iframe.
+   * Therefore, any test begins by obtaining the 'FrameLocator' of the target iframe.
+   * '#sandboxFrame' in 'page'. And '#userHtmlFrame' inside it.
+   */
+  const appFrame: FrameLocator = page
+    .frameLocator('#sandboxFrame')
+    .frameLocator('#userHtmlFrame')
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/')
+  if (!appFrame) {
+    throw new Error('appFrame is not found')
+  }
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click()
+  const countUpButton: Locator = appFrame!.getByRole('button')
+  await countUpButton.click()
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(
-    page.getByRole('heading', { name: 'Installation' }),
-  ).toBeVisible()
+  await expect(countUpButton).toContainText('1')
 })
