@@ -3,7 +3,11 @@
   "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
   "customizations": {
     "vscode": {
-      "extensions": ["esbenp.prettier-vscode"]
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "vitest.explorer",
+        "ms-playwright.playwright"
+      ]
     }
   },
   "postCreateCommand": "yarn && yarn global add @google/clasp && yarn husky install"
