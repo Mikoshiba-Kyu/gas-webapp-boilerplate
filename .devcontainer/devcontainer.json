@@ -6,7 +6,8 @@
       "extensions": [
         "esbenp.prettier-vscode",
         "vitest.explorer",
-        "ms-playwright.playwright"
+        "ms-playwright.playwright",
+        "github.vscode-github-actions"
       ]
     }
   },
