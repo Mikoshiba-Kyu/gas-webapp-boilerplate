@@ -10,5 +10,5 @@
       ]
     }
   },
-  "postCreateCommand": "yarn && yarn global add @google/clasp && yarn husky install"
+  "postCreateCommand": "yarn && yarn global add @google/clasp && yarn playwright install --with-deps && yarn husky install"
 }
