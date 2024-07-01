@@ -12,6 +12,8 @@
 
 # GAS-WebApp-BoilerPlate
 
+[English](https://github.com/Mikoshiba-Kyu/gas-webapp-boilerplate/blob/main/README.md) / [日本語](https://github.com/Mikoshiba-Kyu/gas-webapp-boilerplate/blob/main/README_ja.md)
+
 Google Apps Script で Web アプリを作成するためのボイラープレートです。  
 TypeScript と React での開発を想定しています。
 
