@@ -1,3 +1,15 @@
+![License](https://img.shields.io/github/license/Mikoshiba-Kyu/gas-webapp-boilerplate)
+![Downloads](https://img.shields.io/github/downloads/Mikoshiba-Kyu/gas-webapp-boilerplate/total)
+![Size](https://img.shields.io/github/languages/code-size/Mikoshiba-Kyu/gas-webapp-boilerplate)
+
+[![clasp](https://img.shields.io/badge/built%20with-clasp-4285f4.svg)](https://github.com/google/clasp)
+![Vite](https://img.shields.io/badge/Vite-565656?logo=vite&style=flat")
+![TypeScript](https://img.shields.io/badge/TypeScript-565656?logo=typescript&style=flat")
+![React](https://img.shields.io/badge/React-565656?logo=react&style=flat")
+![Vitest](https://img.shields.io/badge/Vitest-565656?logo=vitest&style=flat")
+![Playwright](https://img.shields.io/badge/Playwright-565656?logo=playwright&style=flat")
+![Github Actions](https://img.shields.io/badge/GithubActions-565656?logo=githubactions&style=flat")
+
 # GAS-WebApp-BoilerPlate
 
 Google Apps Script で Web アプリを作成するためのボイラープレートです。  
