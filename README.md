@@ -52,19 +52,19 @@ Other folders are described below.
 
 # Development
 
-### Launch DecContainer
+## Launch DecContainer
 
 Clone the repository and start DevContainer in any way you wish.
 
-### Front-end implementation
+## Front-end implementation
 
 Implement the front-end side in `src/frontend`.  
 Common UI frameworks, state management libraries, etc. can be used.
 
-### Back-end implementation
+## Back-end implementation
 
 Google Apps specific classes such as `SpreadsheetApp` cannot be used directly from the front end.  
-You must call the function exposed to global in `backend/main.ts` via `gas-client` from the front end.
+You must call the function exposed to global in `backend/main.ts` via [gas-client](https://github.com/enuchi/gas-client) from the front end.
 
 ```typescript
 // backend/main.ts
@@ -115,9 +115,9 @@ const handleButton = async () => {
 > If created by `yarn build` and deployed in GAS, the environment uses `serverFunction`,
 > And if it is running locally by `yarn dev`, it will work in an alternative way.
 
-### Creating and running tests
+## Creating and running tests
 
-#### Unit testing
+### Unit testing
 
 ```bash
 $ yarn test:unit
@@ -126,7 +126,7 @@ $ yarn test:unit
 For front-end and unit testing, use Vitest.  
 If you want to test Google Apps specific functions created in `serverFunctions`, you need to mock them.
 
-#### E2E testing
+### E2E testing
 
 ```bash
 $ yarn test:e2e
@@ -152,3 +152,63 @@ use: {
 
 > [!IMPORTANT]  
 > When conducting E2E testing, the target application must be made available to `everyone`.
+
+## Deployment
+
+First, compile with Vite.
+
+```bash
+$ yarn build
+```
+
+If you are not logged in to clasp, log in.
+
+```bash
+$ clasp login
+```
+
+Create a new project if one has not already been created.  
+When you create a project as follows, a new file `appsscript.json` will be created in the root.  
+If you want to use the one already placed in the `gas` folder, you can delete it.
+
+```bash
+$ clasp create
+
+? Create which script?
+  standalone
+  docs
+  sheets
+  slides
+  forms
+> webapp
+  api
+```
+
+> [!NOTE]  
+> If you are using a project that has already been created,  
+> manually create `.clasp.json` in the root and specify the `scriptId` directly.
+
+> [!NOTE]  
+> Set "timeZone" in `gas/appscript.json` according to your situation.
+
+Replace the `rootDir` in the created `.clasp.json` with the path to the `gas` folder of the project.
+
+```json
+{
+  "scriptId": "********",
+  "rootDir": "/workspaces/gas-webapp-boilerplate/gas"
+}
+```
+
+Execute deployment.
+
+```bash
+$ clasp push
+$ clasp deploy
+```
+
+To open the deployed project page in a browser, use the following command.
+
+```bash
+$ clasp open
+```

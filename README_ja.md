@@ -52,19 +52,19 @@ git clone https://github.com/Mikoshiba-Kyu/gas-webapp-boilerplate.git
 
 # 開発
 
-### DecContainerの起動
+## DecContainerの起動
 
 リポジトリをクローンし、任意の方法で DevContainer を起動します。
 
-### フロントエンドの実装
+## フロントエンドの実装
 
 `src/frontend` 内でフロントエンド側の実装を行います。  
 一般的な UI フレームワークや状態管理ライブラリなどが使用できます。
 
-### バックエンドの実装
+## バックエンドの実装
 
 `SpreadsheetApp` など、Google Apps 特有の class については、フロントエンド側から直接使用することはできません。  
-フロントエンドからは `backend/main.ts` で global に露出させた関数を `gas-client` 経由で呼び出す必要があります。
+フロントエンドからは `backend/main.ts` で global に露出させた関数を [gas-client](https://github.com/enuchi/gas-client) 経由で呼び出す必要があります。
 
 ```typescript
 // backend/main.ts
@@ -115,9 +115,9 @@ const handleButton = async () => {
 > `yarn build` で作成し、GASにデプロイされた環境では `serverFunction` が使用され、  
 > `yarn dev` によりローカルで動作している場合は代替する方法で動作します。
 
-### テストの作成と実行
+## テストの作成と実行
 
-#### ユニットテスト
+### ユニットテスト
 
 ```bash
 $ yarn test:unit
@@ -126,7 +126,7 @@ $ yarn test:unit
 フロントエンドおよびユニットテストについては Vitest を使用します。  
 `serverFunctions` に作成した Google Apps 特有の関数をテストする場合はモック化する必要があります。
 
-#### E2Eテスト
+### E2Eテスト
 
 ```bash
 $ yarn test:e2e
@@ -152,3 +152,63 @@ use: {
 
 > [!IMPORTANT]  
 > E2Eテストを行う際は、対象アプリの公開範囲を `全員` にしておく必要があります。
+
+## デプロイ
+
+はじめに、Viteによるコンパイルを行います。
+
+```bash
+$ yarn build
+```
+
+clasp にログインしていない場合はログインします。
+
+```bash
+$ clasp login
+```
+
+まだプロジェクトが作成されていない場合は新規作成します。  
+以下の操作でプロジェクトを作成すると、ルートに `appsscript.json` が新しく作成されます。  
+`gas` フォルダにあらかじめ配置されているものを使用する場合は、こちらは削除してしまって問題ありません。
+
+```bash
+$ clasp create
+
+? Create which script?
+  standalone
+  docs
+  sheets
+  slides
+  forms
+> webapp
+  api
+```
+
+> [!NOTE]  
+> すでに作成済みのプロジェクトを使用する場合は、
+> ルートに `.clasp.json` を手動で作成し、`scriptId` を直接指定します。
+
+> [!NOTE]  
+> `gas/appscript.json`の "timeZone" は状況に応じて設定してください。
+
+作成された `.clasp.json` の `rootDir` を、プロジェクトの `gas` フォルダのパスに書き換えます。
+
+```json
+{
+  "scriptId": "********",
+  "rootDir": "/workspaces/gas-webapp-boilerplate/gas"
+}
+```
+
+デプロイを実行します。
+
+```bash
+$ clasp push
+$ clasp deploy
+```
+
+デプロイしたプロジェクトページをブラウザで開く場合は以下のコマンドを使用します。
+
+```bash
+$ clasp open
+```
